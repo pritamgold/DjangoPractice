@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'enroll/css/style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello Model Admin</h1>
+    {% if stu %}
+        <h1>Show Data</h1>
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>StuId</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+            </tr>
+            {% for st in stu %}
+                <tr>
+                    <td>{{st.id}}</td>
+                    <td>{{st.stuid}}</td>
+                    <td>{{st.stuName}}</td>
+                    <td>{{st.stuEmail}}</td>
+                    <td>{{st.password}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <h1>No data</h1>
+    {% endif %}
+</body>
+</html>
